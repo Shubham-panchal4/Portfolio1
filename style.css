@@ -1,0 +1,433 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+}
+
+/* Cool Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.red-letter {
+    color: red;
+    font-size: 1.2em;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+/* Navbar */
+header {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+nav h2 {
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative; /* To position the underline correctly */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6c63ff;
+}
+
+/* Underline transition effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ff4d4d; /* Amazing red color */
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s, left 0.3s;
+    transform: translateX(-1%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eef1f7;
+    padding-top: 80px;
+    opacity: 0; /* Start with the whole section hidden */
+    animation: fadeIn 1s forwards; /* Animation for the section */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#home img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 5px solid #6c63ff;
+    opacity: 0;
+    transform: scale(0.5); /* Start scaled down */
+    animation: imageFadeIn 1s 0.5s forwards; /* Animation for the image */
+}
+
+@keyframes imageFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(30px); /* Start lower */
+    animation: textFadeIn 1s 1s forwards; /* Animation for the heading */
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home p {
+    font-size: 1.2rem;
+    color: #6c63ff;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateY(30px); /* Start lower */
+    animation: textFadeIn 1s 1.5s forwards; /* Animation for the paragraph */
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #6c63ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px); /* Start lower */
+    animation: buttonFadeIn 1s 2s forwards; /* Animation for the button */
+}
+
+@keyframes buttonFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:hover {
+    background: #5548cb;
+}
+
+/* LinkedIn Icon */
+.linkedin-icon {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 47px;
+    color: #0077b5;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px); /* Start lower */
+    animation: iconFadeIn 1s 2.5s forwards; /* Animation for the LinkedIn icon */
+}
+
+@keyframes iconFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(13px);
+    }
+}
+
+.linkedin-icon:hover {
+    color: #005582;
+}
+
+.linkedin-icon i {
+    transition: 0.3s;
+}
+
+.linkedin-icon:hover i {
+    transform: scale(0.8);
+}
+
+#about {
+    padding: 80px 20px;
+    background: rgb(255, 255, 255); /* Black background */
+    color: rgb(0, 0, 0); /* White text color */
+    text-align: center; /* Center the text */
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#about p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: rgb(186, 25, 186); /* Make "Shubham" purple */
+    font-weight: bold; /* Optional: Make "Shubham" bold */
+}
+
+/* Add a nice transition effect */
+#about h2 {
+    font-size: 36px;
+    color: purple;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 18px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+#about p:hover {
+    color: #440909;
+    transform: scale(1.05);
+}
+
+
+/* Skills Section */
+#skills {
+    background: #eef1f7;
+    padding: 80px 20px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start with elements hidden */
+    transform: translateY(50px); /* Start lower */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+/* Add delay to each skill item for staggered animation */
+.skill:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.skill:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.skill:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.skill:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.skill:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.skill:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.skill:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.skill:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+
+/* Portfolio Section */
+#portfolio {
+    padding: 80px 20px;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    background: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #5548cb;
+}
+
+/* Footer */
+footer {
+    background: #6c63ff;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Fade-in Animation */
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
